@@ -1,7 +1,9 @@
+/* Define o fundo preto para toda a página */
 body {
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
+    background-color: black;
+    color: orange; /* Define a cor do texto como laranja */
 }
+
 
 .card {
     cursor: pointer;
