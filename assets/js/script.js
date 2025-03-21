@@ -18,7 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 3. Função para exibir filmes no carrossel
     function displayCarousel(movies) {
-        if (carouselContent) {
+    if (carouselContent) {
+        // Verifica se há filmes para exibir
+        if (movies.length > 0) {
             carouselContent.innerHTML = movies.map((movie, index) => `
                 <div class="carousel-item ${index === 0 ? "active" : ""}">
                     <img src="${IMAGE_BASE_URL}${movie.backdrop_path}" class="d-block w-100" alt="${movie.title}">
@@ -27,8 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </div>
             `).join("");
+        } else {
+            carouselContent.innerHTML = `<p>Não há filmes para exibir no momento.</p>`;
         }
     }
+}
 
     // 4. Função para exibir filmes na lista
     function displayMovies(movies) {
@@ -53,15 +58,19 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "detalhes.html";
     }
 
-     // 6. Implementar funcionalidade de pesquisa por filme
-     if (searchBar) {
-        searchBar.addEventListener("input", function () {
+    // 6. Implementar funcionalidade de pesquisa por filme
+    if (searchBar) {
+    let searchTimeout;
+    searchBar.addEventListener("input", function () {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(function() {
             const searchTerm = searchBar.value.toLowerCase();
             fetchMovies("/search/movie", function (movies) {
                 displayMovies(movies.filter(movie => movie.title.toLowerCase().includes(searchTerm)));
             });
-        });
-    }
+        }, 500); // Adiciona debounce para evitar requisições excessivas
+    });
+}
 
     // 7. Carregar filmes populares e filmes em exibição
     fetchMovies("/movie/popular", displayCarousel);
