@@ -4,6 +4,10 @@ body {
     color: orange; /* Define a cor do texto como laranja */
 }
 
+/* Estiliza o título */
+h1 {
+    color: orange; /* Mantém os títulos em laranja */
+}
 
 .card {
     cursor: pointer;
