@@ -36,3 +36,16 @@ h1 {
 .carousel-control-next-icon {
     filter: invert(1); /* Torna os ícones visíveis no fundo preto */
 }
+
+/* Personalizar a barra de navegação */
+.navbar {
+    background-color: black !important;  /* Cor de fundo preta */
+}
+
+.navbar .nav-link {
+    color: orange !important;  /* Cor do texto laranja */
+}
+
+.navbar .nav-link:hover {
+    color: #FFD700 !important;  /* Cor ao passar o mouse */
+}
