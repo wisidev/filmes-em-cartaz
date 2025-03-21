@@ -7,4 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const carouselContent = document.getElementById("carousel-content");
     const movieList = document.getElementById("movie-list");
     const searchBar = document.getElementById("search-bar");
+
+    // 2. Função para buscar filmes da API
+    function fetchMovies(endpoint, callback) {
+        fetch(`${BASE_URL}${endpoint}?api_key=${API_KEY}&language=pt-BR`)
+            .then(response => response.json())
+            .then(data => callback(data.results))
+            .catch(error => console.error("Erro ao buscar filmes:", error));
+    }
 });
