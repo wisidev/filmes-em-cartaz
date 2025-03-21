@@ -1,7 +1,17 @@
-/* Define o fundo preto para toda a página */
 body {
-    background-color: black;
-    color: orange; /* Define a cor do texto como laranja */
+    background-color: black; /* Fundo preto */
+    color: orange; /* Texto laranja */
+    font-family: Arial, sans-serif;
+}
+
+/* Mantém o efeito de zoom nos cards */
+.card {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
 }
 
 /* Estiliza o título */
@@ -16,11 +26,13 @@ h1 {
     color: black; /* Cor do texto no botão */
 }
 
-.card {
-    cursor: pointer;
-    transition: transform 0.3s ease;
+.btn:hover {
+    background-color: darkorange; /* Cor mais escura ao passar o mouse */
+    border-color: darkorange;
 }
 
-.card:hover {
-    transform: scale(1.05);
+/* Ajusta os controles do carrossel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1); /* Torna os ícones visíveis no fundo preto */
 }
