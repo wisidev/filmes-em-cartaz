@@ -52,4 +52,14 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("selectedMovie", movieId);
         window.location.href = "detalhes.html";
     }
+
+     // 6. Implementar funcionalidade de pesquisa por filme
+     if (searchBar) {
+        searchBar.addEventListener("input", function () {
+            const searchTerm = searchBar.value.toLowerCase();
+            fetchMovies("/search/movie", function (movies) {
+                displayMovies(movies.filter(movie => movie.title.toLowerCase().includes(searchTerm)));
+            });
+        });
+    }
 });
