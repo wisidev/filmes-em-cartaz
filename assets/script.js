@@ -29,4 +29,21 @@ document.addEventListener("DOMContentLoaded", function () {
             `).join("");
         }
     }
+
+    // 4. Função para exibir filmes na lista
+    function displayMovies(movies) {
+        if (movieList) {
+            movieList.innerHTML = movies.map(movie => `
+                <div class="col-md-4 mb-4">
+                    <div class="card" onclick="showMovieDetails(${movie.id})">
+                        <img src="${IMAGE_BASE_URL}${movie.poster_path}" class="card-img-top" alt="${movie.title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${movie.title}</h5>
+                            <p class="card-text">${movie.overview.substring(0, 100)}...</p>
+                        </div>
+                    </div>
+                </div>
+            `).join("");
+        }
+    }
 });
