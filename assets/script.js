@@ -62,4 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+
+    // 7. Carregar filmes populares e filmes em exibição
+    fetchMovies("/movie/popular", displayCarousel);
+    fetchMovies("/movie/now_playing", displayMovies);
 });
