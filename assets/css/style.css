@@ -9,6 +9,13 @@ h1 {
     color: orange; /* Mantém os títulos em laranja */
 }
 
+/* Ajusta os botões para combinar melhor com o tema */
+.btn {
+    background-color: orange;
+    border-color: orange;
+    color: black; /* Cor do texto no botão */
+}
+
 .card {
     cursor: pointer;
     transition: transform 0.3s ease;
