@@ -46,4 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
             `).join("");
         }
     }
+
+    // 5. Função para mostrar detalhes do filme e redirecionar
+    function showMovieDetails(movieId) {
+        localStorage.setItem("selectedMovie", movieId);
+        window.location.href = "detalhes.html";
+    }
 });
