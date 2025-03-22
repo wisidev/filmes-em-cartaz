@@ -47,26 +47,27 @@
             <input type="text" id="search-bar" class="form-control" placeholder="Pesquisar por filme...">
         </div>
 
-         <!-- Título da seção de filmes populares -->
+        <!-- Título da seção de filmes populares -->
         <h1 class="text-center">Filmes Populares</h1>
-        
 
         <!-- Estrutura do carrossel do Bootstrap para exibição de filmes populares -->
-        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="container mt-4"> <!-- Aqui foi adicionado o container para garantir o alinhamento -->
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                <!-- Área onde o conteúdo dinâmico do carrossel será inserido -->
+                <div class="carousel-inner" id="carousel-content"></div>
 
-            <!-- Área onde o conteúdo dinâmico do carrossel será inserido -->
-            <div class="carousel-inner" id="carousel-content"></div>
+                <!-- Botão para navegar para o item anterior do carrossel -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
 
-            <!-- Botão para navegar para o item anterior do carrossel -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
+                <!-- Botão para navegar para o próximo item do carrossel -->
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div> <!-- Fechamento da div container -->
 
-            <!-- Botão para navegar para o próximo item do carrossel -->
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
-        </div>
 
         <!-- Botão para navegar para a página de lista de filmes -->
         <div class="text-center mt-4">
