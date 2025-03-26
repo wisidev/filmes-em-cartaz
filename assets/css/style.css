@@ -1,85 +1,85 @@
 body {
-    background-color: black; /* Fundo preto */
-    color: orange; /* Texto laranja */
-    font-family: Arial, sans-serif;
+  background-color: black; /* Fundo preto */
+  color: orange; /* Texto laranja */
+  font-family: Arial, sans-serif;
 }
 
 /* Mantém o efeito de zoom nos cards */
 .card {
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* Estiliza o título */
 h1 {
-    color: orange; /* Mantém os títulos em laranja */
+  color: orange; /* Mantém os títulos em laranja */
 }
 
 /* Ajusta os botões para combinar melhor com o tema */
 .btn {
-    background-color: orange;
-    border-color: orange;
-    color: black; /* Cor do texto no botão */
+  background-color: orange;
+  border-color: orange;
+  color: black; /* Cor do texto no botão */
 }
 
 .btn:hover {
-    background-color: darkorange; /* Cor mais escura ao passar o mouse */
-    border-color: darkorange;
+  background-color: darkorange; /* Cor mais escura ao passar o mouse */
+  border-color: darkorange;
 }
 
 /* Ajusta os controles do carrossel */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    filter: invert(1); /* Torna os ícones visíveis no fundo preto */
+  filter: invert(1); /* Torna os ícones visíveis no fundo preto */
 }
 
 /* Personalizar a barra de navegação */
 .navbar {
-    background-color: black !important;  /* Cor de fundo preta */
+  background-color: black !important; /* Cor de fundo preta */
 }
 
 .navbar .nav-link {
-    color: orange !important;  /* Cor do texto laranja */
+  color: orange !important; /* Cor do texto laranja */
 }
 
 .navbar .nav-link:hover {
-    color: #FFD700 !important;  /* Cor ao passar o mouse */
+  color: #ffd700 !important; /* Cor ao passar o mouse */
 }
 
 #back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px; /* Tamanho do botão */
-    height: 50px; /* Tamanho do botão */
-    border-radius: 50%; /* Tornar o botão redondo */
-    background-color: orange; /* Cor do fundo */
-    color: black; /* Cor da seta */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid black; /* Borda preta ao redor */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px; /* Tamanho do botão */
+  height: 50px; /* Tamanho do botão */
+  border-radius: 50%; /* Tornar o botão redondo */
+  background-color: orange; /* Cor do fundo */
+  color: black; /* Cor da seta */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black; /* Borda preta ao redor */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 #back-to-top:hover {
-    background-color: darkorange; /* Cor do fundo quando passar o mouse */
+  background-color: darkorange; /* Cor do fundo quando passar o mouse */
 }
 
 #back-to-top:focus {
-    outline: none; /* Remove o foco para deixar mais limpo */
+  outline: none; /* Remove o foco para deixar mais limpo */
 }
 
 /* Estilo da seta (triângulo) */
 .triangle-up {
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 12px solid white; /* Cor da seta */
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 12px solid white; /* Cor da seta */
 }
