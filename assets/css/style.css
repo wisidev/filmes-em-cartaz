@@ -2,6 +2,8 @@ body {
   background-color: black; /* Fundo preto */
   color: orange; /* Texto laranja */
   font-family: Arial, sans-serif;
+  margin: 0; /* Remover qualquer margem padrão do body */
+  padding: 0; /* Remover qualquer padding padrão do body */
 }
 
 /* Mantém o efeito de zoom nos cards */
@@ -50,6 +52,12 @@ h1 {
   color: #ffd700 !important; /* Cor ao passar o mouse */
 }
 
+/* Estiliza o item ativo da navbar */
+.navbar .nav-link.active {
+  background-color: #343a40; /* Cor escura de fundo para o item ativo */
+  color: #ffd700; /* Cor de texto ao estar ativo */
+}
+
 #back-to-top {
   position: fixed;
   bottom: 20px;
@@ -82,4 +90,30 @@ h1 {
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-bottom: 12px solid white; /* Cor da seta */
+}
+
+/* Estilo para parágrafos e itens da lista */
+section p,
+section ul li {
+  color: white; /* Texto branco */
+}
+
+.series-section {
+  background-color: #212529; /* cor de fundo */
+  padding: 20px; /* adicionar um pouco de espaçamento */
+  border-radius: 8px; /* bordas arredondadas */
+}
+
+.series-section h1 {
+  color: orange; /* cor do título */
+}
+
+.filmes-populares {
+  background-color: #212529; /* cor de fundo */
+  padding: 20px; /* adicionar um pouco de espaçamento */
+  border-radius: 8px; /* bordas arredondadas */
+}
+
+.filmes-populares h1 {
+  color: orange; /* cor do título */
 }
