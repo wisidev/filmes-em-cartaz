@@ -76,3 +76,21 @@ document.addEventListener("DOMContentLoaded", function () {
     fetchMovies("/movie/popular", displayCarousel);
     fetchMovies("/movie/now_playing", displayMovies);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const backToTopButton = document.getElementById("back-to-top");
+
+    // Mostrar o botão quando o usuário rolar para baixo
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    });
+
+    // Ao clicar no botão, rolar para o topo
+    backToTopButton.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+});

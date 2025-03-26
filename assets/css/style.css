@@ -49,3 +49,37 @@ h1 {
 .navbar .nav-link:hover {
     color: #FFD700 !important;  /* Cor ao passar o mouse */
 }
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px; /* Tamanho do botão */
+    height: 50px; /* Tamanho do botão */
+    border-radius: 50%; /* Tornar o botão redondo */
+    background-color: orange; /* Cor do fundo */
+    color: black; /* Cor da seta */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black; /* Borda preta ao redor */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#back-to-top:hover {
+    background-color: darkorange; /* Cor do fundo quando passar o mouse */
+}
+
+#back-to-top:focus {
+    outline: none; /* Remove o foco para deixar mais limpo */
+}
+
+/* Estilo da seta (triângulo) */
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 12px solid white; /* Cor da seta */
+}
