@@ -45,57 +45,43 @@
       </div>
     </nav>
 
-    <!-- Container principal para o conteúdo da página -->
     <div class="container mt-4">
-      <!-- Botão para voltar à página de lista de filmes -->
       <a href="filmes.html" class="btn btn-secondary mb-3">Voltar</a>
 
-      <!-- Layout com duas colunas para exibir o pôster e detalhes do filme -->
-      <div class="row">
-        <div class="col-md-4">
-          <img id="movie-poster" class="img-fluid" alt="Pôster do Filme" />
-        </div>
-        <div class="col-md-8">
-          <h2 id="movie-title"></h2>
-          <p><strong>Gênero:</strong> <span id="movie-genre"></span></p>
-          <p><strong>Classificação:</strong> <span id="movie-rating"></span></p>
-          <p id="movie-description"></p>
-        </div>
-      </div>
-    </div>
+      <div id="detalhes-filme" class="detalhes-filme-container"></div>
 
-    <div id="detalhes-filme"></div>
+      <script>
+        async function carregarDetalhes() {
+          const params = new URLSearchParams(window.location.search);
+          const filmeId = params.get('id');
 
-    <script>
-      async function carregarDetalhes() {
-        // Captura o ID do filme da URL
-        const params = new URLSearchParams(window.location.search);
-        const filmeId = params.get('id');
+          if (!filmeId) {
+            document.getElementById('detalhes-filme').innerText =
+              'Filme não encontrado.';
+            return;
+          }
 
-        if (!filmeId) {
-          document.getElementById('detalhes-filme').innerText =
-            'Filme não encontrado.';
-          return;
+          const resposta = await fetch(
+            `https://api.themoviedb.org/3/movie/${filmeId}?api_key=9bbf7d734588f0a01ba0510c39e7e786&language=pt-BR`,
+          );
+          const filme = await resposta.json();
+
+          document.getElementById('detalhes-filme').innerHTML = `
+            <img src="https://image.tmdb.org/t/p/w300${filme.poster_path}" alt="${filme.title}">
+            <div class="detalhes-filme-texto">
+              <h1>${filme.title}</h1>
+              <p>${filme.overview}</p>
+              <p><strong>Data de lançamento:</strong> ${filme.release_date}</p>
+              <p><strong>Avaliação:</strong> ${filme.vote_average}/10</p>
+            </div>
+          `;
         }
 
-        // Busca detalhes do filme
-        const resposta = await fetch(
-          `https://api.themoviedb.org/3/movie/${filmeId}?api_key=9bbf7d734588f0a01ba0510c39e7e786&language=pt-BR`,
-        );
-        const filme = await resposta.json();
+        carregarDetalhes();
+      </script>
+    </div>
 
-        // Exibe os detalhes
-        document.getElementById('detalhes-filme').innerHTML = `
-                <h1>${filme.title}</h1>
-                <img src="https://image.tmdb.org/t/p/w300${filme.poster_path}" alt="${filme.title}">
-                <p>${filme.overview}</p>
-                <p><strong>Data de lançamento:</strong> ${filme.release_date}</p>
-                <p><strong>Avaliação:</strong> ${filme.vote_average}/10</p>
-            `;
-      }
-
-      carregarDetalhes();
-    </script>
+    <br />
 
     <!-- Rodapé -->
     <footer class="bg-dark text-light py-4">

@@ -163,3 +163,32 @@ footer {
   height: 100%; /* Faz a imagem ocupar toda a altura do card */
   object-fit: cover; /* Mantém a proporção e corta excessos */
 }
+
+.detalhes-filme-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px; /* Espaço entre a imagem e o texto */
+  background-color: #121212; /* Fundo escuro */
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+}
+
+.detalhes-filme-container img {
+  width: 300px; /* Tamanho do cartaz */
+  border-radius: 8px;
+}
+
+.detalhes-filme-texto {
+  flex: 1; /* Faz o texto ocupar o espaço restante */
+}
+
+.detalhes-filme-texto h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.detalhes-filme-texto p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
