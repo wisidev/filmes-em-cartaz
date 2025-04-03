@@ -63,8 +63,28 @@
         placeholder="Pesquisar filme..."
       />
 
-      <!-- Área onde a lista de filmes será exibida dinamicamente -->
-      <div class="row" id="movie-list"></div>
+      <div id="movie-list"></div>
+
+      <script>
+        async function carregarFilmes() {
+          const resposta = await fetch(
+            'https://api.themoviedb.org/3/movie/popular?api_key=9bbf7d734588f0a01ba0510c39e7e786&language=pt-BR',
+          );
+          const dados = await resposta.json();
+
+          const container = document.getElementById('movie-list');
+          container.innerHTML = '';
+
+          dados.results.forEach((filme) => {
+            const cartaz = document.createElement('a');
+            cartaz.href = `detalhes.html?id=${filme.id}`; // Passa o ID do filme na URL
+            cartaz.innerHTML = `<img src="https://image.tmdb.org/t/p/w200${filme.poster_path}" alt="${filme.title}">`;
+            container.appendChild(cartaz);
+          });
+        }
+
+        carregarFilmes();
+      </script>
     </div>
 
     <button id="back-to-top" class="btn btn-primary">↑</button>

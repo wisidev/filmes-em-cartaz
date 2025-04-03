@@ -137,3 +137,29 @@ footer {
   color: white;
   padding: 20px 0;
 }
+
+#movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 20px; /* Espaço entre os cartazes */
+}
+
+#filmes-container .card,
+#movie-list .card {
+  width: 250px; /* Define uma largura fixa para todos os cards */
+  height: 450px; /* Define uma altura fixa para todos os cards */
+  overflow: hidden; /* Garante que nada ultrapasse o tamanho do card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#filmes-container .card-img-top,
+#movie-list .card-img-top {
+  width: 100%; /* Faz a imagem ocupar toda a largura */
+  height: 100%; /* Faz a imagem ocupar toda a altura do card */
+  object-fit: cover; /* Mantém a proporção e corta excessos */
+}
