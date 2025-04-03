@@ -117,3 +117,23 @@ section ul li {
 .filmes-populares h1 {
   color: orange; /* cor do título */
 }
+
+html,
+body {
+  height: 100%; /* Garante que ocupem toda a altura da tela */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1; /* Faz com que o conteúdo ocupe o espaço disponível */
+}
+
+footer {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+}
