@@ -97,11 +97,19 @@ document.addEventListener('DOMContentLoaded', function () {
   fetchMovies('/movie/now_playing', displayMovies);
 
   // 8. Botão de voltar ao topo
-  window.addEventListener('scroll', function () {
-    backToTopButton.style.display = window.scrollY > 200 ? 'block' : 'none';
-  });
+  if (backToTopButton) {
+    // Mostrar botão ao rolar
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
 
-  backToTopButton.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+    // Voltar ao topo ao clicar
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 });

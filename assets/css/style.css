@@ -54,33 +54,21 @@ h1 {
 
 /* Estiliza o item ativo da navbar */
 .navbar .nav-link.active {
-  background-color: #343a40; /* Cor escura de fundo para o item ativo */
+  background-color: #121212; /* Cor escura de fundo para o item ativo */
   color: #ffd700; /* Cor de texto ao estar ativo */
 }
 
 #back-to-top {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 50px; /* Tamanho do botão */
-  height: 50px; /* Tamanho do botão */
-  border-radius: 50%; /* Tornar o botão redondo */
-  background-color: orange; /* Cor do fundo */
-  color: black; /* Cor da seta */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid black; /* Borda preta ao redor */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#back-to-top:hover {
-  background-color: darkorange; /* Cor do fundo quando passar o mouse */
-}
-
-#back-to-top:focus {
-  outline: none; /* Remove o foco para deixar mais limpo */
+  bottom: 30px;
+  right: 30px;
+  display: none; /* Esconde inicialmente */
+  z-index: 999;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  padding: 0;
 }
 
 /* Estilo da seta (triângulo) */
@@ -99,7 +87,7 @@ section ul li {
 }
 
 .series-section {
-  background-color: #212529; /* cor de fundo */
+  background-color: #121212; /* cor de fundo */
   padding: 20px; /* adicionar um pouco de espaçamento */
   border-radius: 8px; /* bordas arredondadas */
 }
@@ -109,7 +97,7 @@ section ul li {
 }
 
 .filmes-populares {
-  background-color: #212529; /* cor de fundo */
+  background-color: #121212; /* cor de fundo */
   padding: 20px; /* adicionar um pouco de espaçamento */
   border-radius: 8px; /* bordas arredondadas */
 }
