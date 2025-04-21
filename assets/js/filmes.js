@@ -103,4 +103,19 @@ document.addEventListener('DOMContentLoaded', async () => {
       modal.show();
     }
   });
+
+  // Filtro de busca
+  const searchInput = document.getElementById('search-bar');
+
+  searchInput.addEventListener('input', () => {
+    const termo = searchInput.value.toLowerCase();
+    const cards = document.querySelectorAll('#lista-sessoes .col-md-6');
+
+    cards.forEach((card) => {
+      const titulo = card.querySelector('.card-title').innerText.toLowerCase();
+      const corresponde = titulo.includes(termo);
+
+      card.style.display = corresponde ? 'block' : 'none';
+    });
+  });
 });
