@@ -52,7 +52,7 @@ Desenvolver uma aplicação **front-end** moderna e interativa, com foco em:
 
 1. O usuário acessa a página inicial e visualiza os filmes em destaque no carrossel.
 2. Na página de listagem, pode buscar filmes específicos.
-3. Ao clicar em um detalhes de um filme, um **modal** é exibido com informações detalhadas como descrição, classificação e gênero.
+3. Ao clicar em um detalhes de um filme, um **modal** é exibido com informações detalhadas como descrição, duração, classificação e gênero.
 
 ---
 
