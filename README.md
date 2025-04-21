@@ -44,7 +44,7 @@ Desenvolver uma aplicação **front-end** moderna e interativa, com foco em:
   - Atualizações em tempo real na interface sem recarregar a página.
 
 - **🪟 Modais de Detalhes:**  
-  - Informações adicionais como descrição, classificação e gênero ao clicar em um filme.
+  - Informações adicionais como descrição, duração, classificação e gênero ao clicar em um filme.
 
 ---
 
