@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const generos = filme.genre_ids.map((id) => genresMap[id]).join(', ');
 
     card.innerHTML = `
-      <div class="card h-100">
+      <div class="card h-100 bg-cinza text-white">
         <div class="row g-0">
           <div class="col-md-4">
             <img src="https://image.tmdb.org/t/p/w200${
