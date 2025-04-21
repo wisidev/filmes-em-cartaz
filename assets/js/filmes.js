@@ -67,14 +67,28 @@ document.addEventListener('DOMContentLoaded', async () => {
       const descricao = e.target.getAttribute('data-descricao');
       const genero = e.target.getAttribute('data-genero');
 
-      // Buscar detalhes do filme pelo ID
+      // Buscar detalhes do filme
       const responseDetalhes = await fetch(
         `https://api.themoviedb.org/3/movie/${filmeId}?api_key=${API_KEY}&language=pt-BR`,
       );
       const dados = await responseDetalhes.json();
 
       const duracao = dados.runtime ? `${dados.runtime} min` : 'Não informado';
-      const classificacao = dados.adult ? '18 anos' : 'Livre';
+
+      // Buscar classificação indicativa do Brasil
+      const responseClassificacao = await fetch(
+        `https://api.themoviedb.org/3/movie/${filmeId}/release_dates?api_key=${API_KEY}`,
+      );
+      const dataClassificacao = await responseClassificacao.json();
+
+      let classificacao = 'Não informada';
+      const brData = dataClassificacao.results.find(
+        (entry) => entry.iso_3166_1 === 'BR',
+      );
+      if (brData && brData.release_dates.length > 0) {
+        classificacao =
+          brData.release_dates[0].certification || 'Não informada';
+      }
 
       // Preencher o modal
       document.getElementById('modalDetalhesLabel').innerText = titulo;
