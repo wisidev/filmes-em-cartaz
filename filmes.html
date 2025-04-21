@@ -8,36 +8,28 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <title>isiFlicks</title>
+    <title>isiFlicks - Horários</title>
   </head>
   <body>
-    <!-- Barra de navegação -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <!-- Link do logo ou título -->
         <a class="navbar-brand" href="index.html">isiFlicks</a>
-
-        <!-- Ícone para dispositivos móveis -->
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- Links do menu -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Início</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="filmes.html">Filmes</a>
+              <a class="nav-link" href="filmes.html">Filmes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="sobre.html">Sobre</a>
@@ -50,134 +42,66 @@
       </div>
     </nav>
 
-    <!-- Container principal para o conteúdo da página -->
+    <!-- Campo de pesquisa -->
     <div class="container mt-4">
-      <!-- Título da página -->
-      <h1 class="text-center">Filmes em Cartaz</h1>
-
-      <!-- Barra de pesquisa para procurar filmes -->
-      <input
-        type="text"
-        id="search-bar"
-        class="form-control mb-3"
-        placeholder="Pesquisar filme..."
-      />
-
-      <div id="movie-list"></div>
-
-      <script>
-        async function carregarFilmes() {
-          const resposta = await fetch(
-            'https://api.themoviedb.org/3/movie/popular?api_key=9bbf7d734588f0a01ba0510c39e7e786&language=pt-BR',
-          );
-          const dados = await resposta.json();
-
-          const container = document.getElementById('movie-list');
-          container.innerHTML = '';
-
-          dados.results.forEach((filme) => {
-            const cartaz = document.createElement('a');
-            cartaz.href = `detalhes.html?id=${filme.id}`; // Passa o ID do filme na URL
-            cartaz.innerHTML = `<img src="https://image.tmdb.org/t/p/w200${filme.poster_path}" alt="${filme.title}">`;
-            container.appendChild(cartaz);
-          });
-        }
-
-        carregarFilmes();
-      </script>
+      <div class="mb-4">
+        <input
+          type="text"
+          id="search-bar"
+          class="form-control"
+          placeholder="Pesquisar por filme..."
+        />
+      </div>
     </div>
 
-    <button id="back-to-top" class="btn btn-primary">↑</button>
+    <!-- Conteúdo principal -->
+    <div class="container mt-4">
+      <h1 class="text-center mb-4">Sessões de Hoje</h1>
 
-    <br />
+      <div id="lista-sessoes" class="row g-4"></div>
+    </div>
 
-    <!-- Rodapé -->
-    <footer class="bg-dark text-light py-4">
-      <div class="container">
-        <!-- Linha de contato -->
-        <div class="row mb-4">
-          <div class="col-12">
-            <p>Dúvidas? Ligue para <strong>0800 591 2876</strong></p>
+    <!-- Modal de Detalhes do Filme -->
+    <div
+      class="modal fade"
+      id="modalDetalhes"
+      tabindex="-1"
+      aria-labelledby="modalDetalhesLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalDetalhesLabel">Título do Filme</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
           </div>
-        </div>
-
-        <!-- 4 colunas de links -->
-        <div class="row">
-          <!-- Coluna 1 -->
-          <div class="col-md-3">
-            <ul class="list-unstyled">
-              <li><a href="#" class="text-light">Perguntas frequentes</a></li>
-              <li><a href="#" class="text-light">Central de Ajuda</a></li>
-              <li><a href="#" class="text-light">Conta</a></li>
-              <li><a href="#" class="text-light">Media Center</a></li>
-              <li><a href="#" class="text-light">Só na isiFlicks</a></li>
-            </ul>
+          <div class="modal-body">
+            <p id="modalDescricao">Descrição do filme...</p>
+            <p><strong>Duração:</strong> <span id="modalDuracao"></span></p>
+            <p>
+              <strong>Classificação:</strong>
+              <span id="modalClassificacao"></span>
+            </p>
           </div>
-
-          <!-- Coluna 2 -->
-          <div class="col-md-3">
-            <ul class="list-unstyled">
-              <li>
-                <a href="#" class="text-light">Relações com investidores</a>
-              </li>
-              <li><a href="#" class="text-light">Carreiras</a></li>
-              <li>
-                <a href="#" class="text-light">Resgatar cartão pré-pago</a>
-              </li>
-              <li>
-                <a href="#" class="text-light">Comprar cartão pré-pago</a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Coluna 3 -->
-          <div class="col-md-3">
-            <ul class="list-unstyled">
-              <li><a href="#" class="text-light">Formas de assistir</a></li>
-              <li><a href="#" class="text-light">Termos de Uso</a></li>
-              <li><a href="#" class="text-light">Privacidade</a></li>
-              <li>
-                <a href="#" class="text-light">Preferências de cookies</a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Coluna 4 -->
-          <div class="col-md-3">
-            <ul class="list-unstyled">
-              <li>
-                <a href="#" class="text-light">Informações corporativas</a>
-              </li>
-              <li><a href="#" class="text-light">Entre em contato</a></li>
-              <li><a href="#" class="text-light">Teste de velocidade</a></li>
-              <li><a href="#" class="text-light">Avisos legais</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Seletor de idioma -->
-        <div class="row mt-4">
-          <div class="col-12">
-            <select class="form-select w-auto" aria-label="Selecionar idioma">
-              <option value="1" selected>Português</option>
-              <option value="2">Inglês</option>
-              <option value="3">Espanhol</option>
-              <!-- Adicione mais idiomas se necessário -->
-            </select>
-          </div>
-        </div>
-
-        <!-- isiFlciks Brasil -->
-        <div class="row mt-3">
-          <div class="col-12">
-            <p>isiFlicks Brasil</p>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
 
-    <!-- Link para o arquivo JavaScript personalizado -->
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/filmes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
