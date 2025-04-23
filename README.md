@@ -87,7 +87,7 @@ ou utilize a extensão Live Server no VS Code para uma melhor experiência.
 ## 🌍 Deploy Online
 A aplicação está disponível online via GitHub Pages:
 
-🔗 [Acessar Aplicação](https://wisidev.github.io/filmes_em_cartaz/filmes.html)
+🔗 [Acessar Aplicação](https://wisidev.github.io/filmes_em_cartaz/index.html)
 
 ## 🌐 Créditos e Referências
 [TMDb - The Movie Database](https://developer.themoviedb.org/docs/getting-started)
