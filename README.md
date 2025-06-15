@@ -78,7 +78,7 @@ Desenvolver uma aplicação **front-end** moderna e interativa, com foco em:
 1. Clone este repositório:
 
     ```bash
-   git clone https://github.com/wisidev/filmes_em_cartaz.git
+   git clone https://github.com/wisidev/filmes-em-cartaz.git
     ```
 
 2. Abra o arquivo index.html no seu navegador
@@ -87,7 +87,7 @@ ou utilize a extensão Live Server no VS Code para uma melhor experiência.
 ## 🌍 Deploy Online
 A aplicação está disponível online via GitHub Pages:
 
-🔗 [Acessar Aplicação](https://wisidev.github.io/filmes_em_cartaz/index.html)
+🔗 [Acessar Aplicação](https://wisidev.github.io/filmes-em-cartaz/index.html)
 
 ## 🌐 Créditos e Referências
 [TMDb - The Movie Database](https://developer.themoviedb.org/docs/getting-started)
